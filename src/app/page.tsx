@@ -179,7 +179,7 @@ export default function Home() {
         </main>
       </div>
 
-      <MascotGuide ref={mascotRef} steps={tour} imageSrc="/mascot/chim-lac.webp" storageKey="lac-hoc-demo-tour-v1" onComplete={() => showToast("Bạn đã khám phá xong trang demo! 🎉")} />
+      <MascotGuide ref={mascotRef} steps={tour} imageSrc={`${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/mascot/chim-lac.webp`} storageKey="lac-hoc-demo-tour-v1" onComplete={() => showToast("Bạn đã khám phá xong trang demo! 🎉")} />
       {toast && <div className="toast" role="status"><CheckCircle2 size={18}/>{toast}<button aria-label="Đóng thông báo" onClick={() => setToast("")}><X size={15}/></button></div>}
     </div>
   );

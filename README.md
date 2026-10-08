@@ -32,9 +32,18 @@ Tài liệu chi tiết và ví dụ copy sang sản phẩm chính: [src/componen
 
 Đã tích hợp **chính ảnh Chim Lạc gốc bạn gửi** (bản WebP tách nền, thu nhỏ để tối ưu tốc độ) cho nhân vật bay ở góc màn hình: `public/mascot/chim-lac.webp`. Nhân vật lớn trên banner là SVG lấy cảm hứng từ ảnh gốc, có chuyển động cánh và đuôi. Bạn có thể thay ảnh WebP bằng bản độ phân giải cao hơn mà không cần sửa logic tour. Khi dùng ảnh raster, chim bay/lơ lửng như một sprite; cánh chưa đập độc lập.
 
-## Triển khai trực tuyến
+## Triển khai trực tuyến miễn phí bằng GitHub Pages
 
-Cách đơn giản: import repository vào [Vercel](https://vercel.com/new), chọn framework Next.js, rồi Deploy. Phần này cần chủ repository phê duyệt kết nối và triển khai. Chỉ GitHub repository thôi chưa tạo ra URL demo trực tuyến.
+Dự án có **Next.js Static Export** và workflow `.github/workflows/pages.yml`, nên không cần Vercel.
+
+1. Vào **Settings → Pages** của repository `vunt2/testmascot`.
+2. Trong **Build and deployment**, chọn **Source: GitHub Actions** (chỉ cần làm lần đầu).
+3. Workflow **Deploy to GitHub Pages** chạy khi có commit trên `main` hoặc chạy thủ công ở **Actions**.
+4. Chờ workflow màu xanh. Website: **https://vunt2.github.io/testmascot/**.
+
+Cấu hình `GITHUB_PAGES=true` khi build trên Actions tự đặt `basePath=/testmascot`. Đường dẫn ảnh mascot cũng được tự thêm prefix, trong khi chạy local `npm run dev` không bị prefix.
+
+Lưu ý: phần ứng dụng sử dụng static export, không thể dùng API routes/server-side rendering của Next.js trên GitHub Pages. Demo chỉ là giao diện React nên phù hợp.
 
 ## Kiểm tra
 
