@@ -1,0 +1,58 @@
+.layer{position:fixed;inset:0;z-index:60;pointer-events:none}
+.bird{position:fixed;right:20px;bottom:18px;width:138px;height:158px;pointer-events:none;z-index:3;transition:left 850ms cubic-bezier(.22,1,.36,1),top 850ms cubic-bezier(.22,1,.36,1);will-change:left,top}
+.bird.ready{right:auto;bottom:auto}
+.birdButton{display:block;width:100%;height:100%;border:0;background:none;padding:0;cursor:pointer;pointer-events:auto;position:relative;filter:drop-shadow(0 14px 16px rgba(94,65,34,.18));transform-origin:center bottom;animation:bob 3.6s ease-in-out infinite}
+.birdButton:focus-visible,.dockChip:focus-visible,.iconButton:focus-visible,.backButton:focus-visible,.skipButton:focus-visible,.primaryButton:focus-visible{outline:3px solid #40baf2;outline-offset:4px}
+.bird.flying .birdButton{animation:bob 2.4s ease-in-out infinite;filter:drop-shadow(0 16px 15px rgba(29,80,140,.19))}
+.bird.celebrating .birdButton{animation:celebrate 850ms ease-in-out infinite}
+.art,.characterImage{display:block;width:100%;height:100%;overflow:visible;object-fit:contain;user-select:none}
+.characterImage{filter:drop-shadow(0 5px 6px rgba(22,58,99,.06))}
+.wing{transform-origin:132px 177px;animation:wingbeat 2.8s ease-in-out infinite}
+.smallWing{transform-origin:206px 203px;animation:smallwing 2.8s ease-in-out infinite}
+.tail{transform-origin:160px 255px;animation:tailwave 3.4s ease-in-out infinite}
+.sparkles{animation:sparkle 1.15s ease-in-out infinite}
+.dockChip{position:absolute;left:50%;bottom:-2px;transform:translateX(-50%);white-space:nowrap;border:1px solid #E4CB9E;background:rgba(255,250,235,.98);border-radius:999px;padding:7px 12px;color:#835722;font:700 11px/1.1 system-ui,sans-serif;box-shadow:0 6px 18px rgba(68,46,25,.12);cursor:pointer;pointer-events:auto}
+.dockChip span{color:#C88B38}
+.highlight{position:fixed;z-index:1;pointer-events:none;border-radius:16px;outline:2px solid #D49A48;box-shadow:0 0 0 6px rgba(226,171,83,.16),0 0 0 12px rgba(226,171,83,.08);transition:all 350ms ease}
+.bubble{position:fixed;z-index:4;max-width:calc(100vw - 24px);border:1px solid #E7DFD1;border-radius:20px;background:#FFFFFF;box-shadow:0 26px 72px rgba(22,38,62,.18),0 3px 10px rgba(22,38,62,.04);padding:18px 18px 16px;pointer-events:auto;animation:appear 340ms cubic-bezier(.2,.8,.2,1)}
+.bubbleTop{display:flex;align-items:center;justify-content:space-between;gap:8px}
+.eyebrow{font:800 9px/1.2 system-ui,sans-serif;letter-spacing:1.5px;color:#AA702D;display:inline-flex;align-items:center;gap:7px}
+.pulseDot{width:7px;height:7px;border-radius:50%;background:#E3A352;box-shadow:0 0 0 4px #FCF1DC;animation:pulsing 2s infinite}
+.iconButton{display:grid;place-items:center;width:27px;height:27px;background:#F7F7F4;border:0;color:#78818E;border-radius:50%;cursor:pointer}
+.progressRow{display:flex;align-items:center;gap:5px;margin:14px 0 11px}
+.progressItem,.progressActive{height:4px;flex:1;border-radius:10px;background:#EDEFEF}
+.progressActive{background:linear-gradient(90deg,#E0A14F,#F5CE81)}
+.stepCount{font-size:10px;color:#86909B;white-space:nowrap;margin-left:5px;font-weight:700}
+.bubbleTitle{font:800 19px/1.3 system-ui,sans-serif;color:#152C49;letter-spacing:-.5px;margin:0 0 9px}
+.bubbleBody{font:400 13px/1.65 system-ui,sans-serif;color:#69798B;margin:0 0 18px}
+.actions,.directionActions{display:flex;align-items:center;justify-content:space-between;gap:8px}
+.skipButton{border:0;background:transparent;font-size:12px;font-weight:700;color:#929AA2;padding:9px 5px;cursor:pointer}
+.backButton{background:#F1F3F4;border:1px solid #E9EDEF;border-radius:10px;width:35px;height:35px;display:grid;place-items:center;color:#536478;cursor:pointer}
+.primaryButton{border:0;border-radius:11px;display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:10px 13px;background:#123C6C;color:white;font-size:12px;letter-spacing:0;font-weight:800;cursor:pointer;box-shadow:0 5px 12px rgba(18,60,108,.17)}
+.primaryButton:hover{background:#0C2F57}
+.resetHint{position:fixed;right:10px;bottom:7px;color:#B18B59;background:white;border:1px solid #E6D5B7;border-radius:50%;height:27px;width:27px;display:grid;place-items:center;cursor:pointer;pointer-events:auto}
+.srOnly{position:absolute;height:1px;width:1px;clip:rect(0,0,0,0);overflow:hidden;white-space:nowrap}
+.confetti{position:fixed;inset:0;overflow:hidden;pointer-events:none;z-index:2}
+.confetti i{position:absolute;top:-20px;width:8px;height:13px;background:#EDB25F;opacity:0;animation:fall 3s ease-in infinite;transform:rotate(20deg)}
+.confetti i:nth-child(3n){background:#2C92D2}
+.confetti i:nth-child(4n){background:#E78673}
+@keyframes bob{0%,100%{transform:translateY(0) rotate(-2deg)}50%{transform:translateY(-9px) rotate(2deg)}}
+@keyframes celebrate{0%,100%{transform:translateY(0) rotate(-5deg)}45%{transform:translateY(-18px) rotate(8deg)}65%{transform:translateY(-7px) rotate(-4deg)}}
+@keyframes wingbeat{0%,100%{transform:rotate(0deg) scaleY(1)}50%{transform:rotate(-6deg) scaleY(.96)}}
+@keyframes smallwing{0%,100%{transform:rotate(0deg)}50%{transform:rotate(8deg)}}
+@keyframes tailwave{0%,100%{transform:rotate(0deg)}50%{transform:rotate(-5deg)}}
+@keyframes sparkle{0%,100%{opacity:.55;transform:scale(.9)}50%{opacity:1;transform:scale(1.04)}}
+@keyframes pulsing{0%,100%{box-shadow:0 0 0 3px #FCF1DC}50%{box-shadow:0 0 0 6px rgba(252,241,220,0)}}
+@keyframes appear{from{opacity:0;transform:translateY(10px) scale(.97)}to{opacity:1;transform:translateY(0) scale(1)}}
+@keyframes fall{0%{opacity:0;transform:translateY(-10px) rotate(0)}10%{opacity:1}85%{opacity:1}100%{opacity:0;transform:translateY(110vh) rotate(720deg)}}
+@media(max-width:650px){
+.bird{width:102px;height:116px;right:8px;bottom:8px}
+.dockChip{font-size:9px;padding:7px 10px}
+.bubble{padding:15px}
+.bubbleTitle{font-size:17px}
+.bubbleBody{font-size:12px}
+}
+@media(prefers-reduced-motion:reduce){
+.bird,.highlight{transition:none!important}
+.birdButton,.wing,.smallWing,.tail,.sparkles,.pulseDot,.confetti i,.bubble{animation:none!important}
+}

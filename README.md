@@ -1,5 +1,44 @@
-# Chim Lạc Mascot Demo
+# Chim Lạc — Mascot Guide Demo 🐦
 
-Ứng dụng demo Next.js/React cho linh vật Chim Lạc, với phần mascot độc lập để tái sử dụng.
+Một trang demo giáo dục bằng **Next.js 15 + React 19 + TypeScript**, có linh vật Chim Lạc bay từ góc màn hình tới các điểm hướng dẫn.
 
-> Code demo được phát triển trên nhánh riêng thông qua pull request.
+## Chạy thử
+
+Yêu cầu Node.js 20 trở lên.
+
+```bash
+npm install
+npm run dev
+```
+
+Mở [http://localhost:3000](http://localhost:3000).
+
+## Những gì có trong demo
+
+- Dashboard học tập giả lập: thẻ khóa học, bộ lọc, lộ trình và danh sách việc cần làm.
+- Chim Lạc lơ lửng ở góc màn hình và bay tới 4 điểm qua tính năng guided tour.
+- Bóng thoại hướng dẫn có nút Tiếp theo, Quay lại, Bỏ qua.
+- Hiệu ứng chúc mừng, nút ẩn/hiện mascot, lưu trạng thái tour trên thiết bị.
+- Hỗ trợ responsive và reduced motion.
+
+## Tách biệt và tái sử dụng
+
+**Mascot** chỉ nằm trong `src/components/chim-lac/`. 
+**Demo page** nằm trong `src/app/` và có thể xóa sau này.
+
+Tài liệu chi tiết và ví dụ copy sang sản phẩm chính: [src/components/chim-lac/README.md](src/components/chim-lac/README.md).
+
+## Về hình ảnh
+
+SVG linh vật được dựng lại theo phong cách vàng đồng – xanh dương để có thể hoạt ảnh cánh, đuôi ngay trong React. Nếu muốn dùng chính xác ảnh 3D gốc đã gửi, truyền đường dẫn ảnh nền trong suốt qua prop `imageSrc`. Xem hướng dẫn trong tài liệu component. Mọi chuyển động bay trên giao diện vẫn hoạt động với `imageSrc`.
+
+## Triển khai trực tuyến
+
+Cách đơn giản: import repository vào [Vercel](https://vercel.com/new), chọn framework Next.js, rồi Deploy. Phần này cần chủ repository phê duyệt kết nối và triển khai. Chỉ GitHub repository thôi chưa tạo ra URL demo trực tuyến.
+
+## Kiểm tra
+
+```bash
+npm run typecheck
+npm run build
+```
