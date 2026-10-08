@@ -30,7 +30,7 @@ Tài liệu chi tiết và ví dụ copy sang sản phẩm chính: [src/componen
 
 ## Về hình ảnh
 
-SVG linh vật được dựng lại theo phong cách vàng đồng – xanh dương để có thể hoạt ảnh cánh, đuôi ngay trong React. Nếu muốn dùng chính xác ảnh 3D gốc đã gửi, truyền đường dẫn ảnh nền trong suốt qua prop `imageSrc`. Xem hướng dẫn trong tài liệu component. Mọi chuyển động bay trên giao diện vẫn hoạt động với `imageSrc`.
+Đã tích hợp **chính ảnh Chim Lạc gốc bạn gửi** (bản WebP tách nền, thu nhỏ để tối ưu tốc độ) cho nhân vật bay ở góc màn hình: `public/mascot/chim-lac.webp`. Nhân vật lớn trên banner là SVG lấy cảm hứng từ ảnh gốc, có chuyển động cánh và đuôi. Bạn có thể thay ảnh WebP bằng bản độ phân giải cao hơn mà không cần sửa logic tour. Khi dùng ảnh raster, chim bay/lơ lửng như một sprite; cánh chưa đập độc lập.
 
 ## Triển khai trực tuyến
 

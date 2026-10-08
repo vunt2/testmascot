@@ -38,7 +38,7 @@ export function MyPage() {
 
 ## Art
 
-The bundled `ChimLacArt.tsx` is an independently animated SVG illustration inspired by the user's Chim Lạc reference. This is **not** a vectorization of the original 3D image. To use the exact original art, export it as transparent WebP/PNG in your own app and pass `imageSrc="/path/to/chim-lac.webp"`. Flight and idle movement still work; independently flapping 3D wings require layered artwork.
+The **actual original Chim Lạc illustration** (optimized 155px transparent cutout) is at `public/mascot/chim-lac.webp`, and the demo passes `imageSrc` for the flying corner mascot. Copy this asset into your own app's `public/mascot/` folder. The separately bundled `ChimLacArt.tsx` is an animated SVG *interpretation* for decorative use, not a vectorization of the original illustration. To use the original, pass `imageSrc="/mascot/chim-lac.webp"`. Flight/idle works with the image; independently flapping 3D wings still requires layered artwork.
 
 The CSS handles floating/flight between UI elements. Each host defines the selectors and copy. No AI backend is required.
 
